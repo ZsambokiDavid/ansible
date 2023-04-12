@@ -1,0 +1,21 @@
+---
+- name: install
+  apt:
+    name: apache2
+    state: latest
+
+- name: open port on firewall
+  ufw:
+    service: http
+    policy: allow
+    state: reloaded
+
+- name: reload
+  service:
+    name: apache2
+    state: reloaded
+
+- name: restart
+  service:
+    name: apache2
+    state: restarted

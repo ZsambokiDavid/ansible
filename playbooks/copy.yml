@@ -1,0 +1,14 @@
+---
+- name: copy
+  hosts: localhost
+
+  tasks:
+    - name: copy
+      become: true
+      copy:
+        src: /home/john/test.txt
+        dest: /home/me
+        owner: john
+        group: john
+        mode: 0644
+

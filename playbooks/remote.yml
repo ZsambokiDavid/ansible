@@ -1,0 +1,25 @@
+---
+- name: remote
+  hosts: all
+
+  tasks:
+  - name: remote adduser
+    user:
+      name: remote
+      home: /home/remote
+      shell: /bin/bash
+
+  - name: remote userpwd
+    user:
+      name: remote
+      update_password: always
+      password: "{{ pass|password_hash('sha512') }}"
+
+  - name: remote copy
+    become: true
+    copy:
+      src: /home/john/remotecopy.txt
+      dest: /home/remote
+      owner: remote
+      group: remote
+      mode: 0766

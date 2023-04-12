@@ -1,0 +1,9 @@
+---
+- name: file perminnion
+  hosts: localhost
+
+  tasks:
+    - name: perm
+      file:
+        path: /home/me/test.txt
+        mode: a+w

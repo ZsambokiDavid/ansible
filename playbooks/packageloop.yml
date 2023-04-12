@@ -1,0 +1,22 @@
+---
+- name: installing via loop
+  hosts: localhost
+
+  tasks:
+    - name: if
+      apt:
+        name: apache2
+        state: latest
+      when: ansible_os_family == "RedHat"
+    - name: install
+      apt:
+        name: "{{item}}"
+        state: latest
+      loop:
+        - apache2
+        - python3
+        - python3-pip
+        - docker-ce
+        - docker-ce-cli
+        - docker-compose
+        - containerd.io

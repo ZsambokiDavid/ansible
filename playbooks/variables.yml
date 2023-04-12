@@ -1,0 +1,17 @@
+---
+- name:
+  hosts: localhost
+  vars:
+    pack: apache2
+
+  tasks:
+    - name: install {{ pack }}
+      apt:
+        name: "{{ pack }}"
+        state: latest
+
+  handlers:
+    - name: restart "{{ pack }}"
+      service:
+        name: "{{ pack }}"
+        state: reloaded

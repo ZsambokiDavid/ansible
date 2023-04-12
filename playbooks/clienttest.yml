@@ -1,0 +1,12 @@
+---
+- name:
+  hosts: all
+
+  tasks:
+    - name: test
+      file:
+        name: node
+        home: /home/node
+        shell: /bin/bash
+
+

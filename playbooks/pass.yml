@@ -1,0 +1,10 @@
+---
+- name: pass change
+  hosts: localhost
+
+  tasks:
+    - name: change password
+      user:
+        name: me
+        update_password: always
+        password: "{{ a|password_hash('sha512') }}"

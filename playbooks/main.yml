@@ -1,0 +1,21 @@
+---
+- name: install http
+  hosts: localhost
+
+  tasks:
+  - name: install
+    apt:
+      name: apache2
+      state: latest
+
+  handlers:
+  - name: reload
+    service:
+      name: apache2
+      state: reloaded
+
+  - name: restart
+    service:
+      name: apache2
+      state: restarte
+

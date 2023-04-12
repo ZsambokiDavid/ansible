@@ -1,0 +1,7 @@
+---
+- name: message
+  hosts: localhost
+
+  tasks:
+  - name: print
+    debug: msg="-Van egy cigid? -Cigim? Persze, hogy van!"

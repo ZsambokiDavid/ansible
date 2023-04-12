@@ -1,0 +1,10 @@
+---
+- name: rulez
+  hosts: localhost
+  roles:
+    - httpWp80
+    
+- name: angelo
+  hosts: localhost
+  roles:
+    - install

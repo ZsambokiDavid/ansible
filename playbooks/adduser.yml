@@ -1,0 +1,10 @@
+---
+- name: add user
+  hosts: all
+
+  tasks:
+    - name: add user
+      user:
+        name: me
+        home: /home/me
+        shell: /bin/bash

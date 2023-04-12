@@ -1,0 +1,7 @@
+---
+- name: scriptrun
+  hosts: localhost
+
+  tasks:
+    - name: run
+      shell: "/home/me/cfile.sh"

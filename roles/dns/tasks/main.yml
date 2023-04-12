@@ -1,0 +1,5 @@
+---
+- name: install dns
+  apt:
+    name: bind9
+    state: latest

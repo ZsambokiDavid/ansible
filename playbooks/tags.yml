@@ -1,0 +1,41 @@
+---
+- name: tags
+  hosts: all
+
+  tasks:
+  - name: http yet again
+    apt:
+      name: apache2
+      state: latest
+    tags: ia
+
+  - name: time
+    apt:
+      name: chrony
+      state: latest
+    tags: it
+
+  - name: dns
+    apt:
+      name: bind9
+      state: latest
+    tags: id
+
+  - name: firewall
+    apt:
+      name: firewalld
+      state: latest
+    tags: if
+
+  - name: copy
+    become: true
+    copy:
+      src: /home/john/test.txt
+      dest: /home/john
+      owner: john
+      group: john
+      mode: 777
+    tags: cp
+
+  roles:
+    - start 

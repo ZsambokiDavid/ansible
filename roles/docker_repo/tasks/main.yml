@@ -1,0 +1,25 @@
+---
+- name: Add Docker gpg key
+  become: yes
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker Repository
+  become: yes
+  apt_repository:
+    repo: "deb https://download.docker.com/linux/ubuntu {{ os }} stable"
+    state: present
+
+- name: Update apt and install docker-ce docker-ce-cli and containerd.io
+  become: yes
+  apt: 
+    update_cache: yes 
+    name: "{{ docker_packages }}"
+    state: latest
+
+- name: Install Docker Module for Python
+  become: yes
+  pip:
+    name: docker
+

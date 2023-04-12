@@ -1,0 +1,10 @@
+---
+- name: combined
+  hosts: localhost
+
+  tasks:
+  - name: print
+    debug: msg="-Van egy cigid? -Cigim? Persze, hogy van!"
+
+  - name: ping
+    ping:

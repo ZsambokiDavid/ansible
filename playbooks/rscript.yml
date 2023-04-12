@@ -1,0 +1,7 @@
+---
+- name: remote script
+  hosts: all
+
+  tasks:
+    - name: run script
+      shell: "/home/remote/script.sh"

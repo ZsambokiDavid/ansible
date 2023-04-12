@@ -1,0 +1,21 @@
+---
+- name: restart services
+  service:
+    name: apache2
+    state: reloaded
+
+- name: restart time
+  service:
+    name: chrony
+    state: reloaded
+
+- name: restart dns
+  service:
+     name: bind9
+     state: reloaded
+
+- name: restart firewall
+  service:
+    name: firewalld
+    state: reloaded
+
